@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate, redirect } from "react-router-dom";
 
-import ItemPage from "./components/Items";
+import Store from "./components/Store";
 import Library from "./components/Library";
 import ProfilePage from "./components/ProfilePage";
 import LoginPage from "./components/LoginPage";
@@ -21,7 +21,7 @@ function App() {
 
         <Route path="/home" element={<HomePage />} />
 
-        <Route path="/browse" element={<ItemPage />} />
+        <Route path="/browse" element={<Store />} />
 
         <Route path="/library" element={<Library />} />
 

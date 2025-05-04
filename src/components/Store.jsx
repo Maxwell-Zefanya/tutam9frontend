@@ -68,7 +68,6 @@ export default function HomePage() {
     try {
       const response = await axios.get("https://maxwell-tutam9backend.vercel.app/item/")
       setData(response.data.payload.map((data) => data));
-      console.log("RESPMAP: ", response.data.payload.map((data) => data));
     } catch (error) {
       console.error(error);
     }
@@ -79,13 +78,13 @@ export default function HomePage() {
       <DashboardElement />
       <div className="text-white overflow-y-scroll flex flex-col h-screen m-auto flex-1" >
         <div className="flex flex-row w-full py-3 items-center justify-center mx-auto">
-          <button className="bg-[#737CCF] p-2 px-3 my-1 rounded-2xl hover:bg-[#2A0803] text-sm" onClick={() => {isAddingItem = true; handleAddItem}}>Add a New Item</button>
+          <button className="bg-[#2A0803] p-2 px-3 my-1 rounded-2xl hover:bg-[#2A0803] text-sm" onClick={() => {isAddingItem = true; handleAddItem}}>Add a New Item</button>
         </div>
         <ol className="w-full">
           {data.map((data) => (
             <li
               key={data.id}
-              className="text-[20px] p-3 flex flex-row bg-[#737CCF] m-2 rounded-2xl hover:bg-[#505794]"
+              className="text-[20px] p-3 flex flex-row bg-[#2A0803] m-2 rounded-2xl hover:bg-[#2A0803]"
             >
               <div className="flex flex-col ml-2 my-auto">
                 <p className="font-bold underline">{data.name}</p>
@@ -94,9 +93,9 @@ export default function HomePage() {
                 <p>ID: {data.id}</p>
               </div>
               <div className="flex flex-col ml-auto">
-                <button className="bg-[#798DC5] p-2 px-3 my-1 rounded-2xl hover:bg-[#2A0803] text-sm" onClick={() => {isPurchasingItem = true; handlePurchaseItem(data)}}>Purchase</button>
-                <button className="bg-[#798DC5] p-2 px-3 my-1 rounded-2xl hover:bg-[#2A0803] text-sm" onClick={() => {isEditingItem = true; handleEditItem(data)}}>Edit</button>
-                <button className="bg-[#798DC5] p-2 px-3 my-1 rounded-2xl hover:bg-[#2A0803] text-sm" onClick={() => handleRemoveItem(data)}>Remove</button>
+                <button className="bg-[#2A0803] p-2 px-3 my-1 rounded-2xl hover:bg-[#2A0803] text-sm" onClick={() => {isPurchasingItem = true; handlePurchaseItem(data)}}>Purchase</button>
+                <button className="bg-[#2A0803] p-2 px-3 my-1 rounded-2xl hover:bg-[#2A0803] text-sm" onClick={() => {isEditingItem = true; handleEditItem(data)}}>Edit</button>
+                <button className="bg-[#2A0803] p-2 px-3 my-1 rounded-2xl hover:bg-[#2A0803] text-sm" onClick={() => handleRemoveItem(data)}>Remove</button>
               </div>
             </li>
           ))}

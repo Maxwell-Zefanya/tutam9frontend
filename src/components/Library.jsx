@@ -42,8 +42,10 @@ export default function StorePage() {
   const RefundHandler = async(user_id, game_id) => {
     try {
       const response = await axios.delete("https://maxwell-tutam9backend.vercel.app/games/refund", {
-        "user_id": user_id,
-        "game_id": game_id,
+        body: {
+          "user_id": user_id,
+          "game_id": game_id
+        }
       },);
       console.log(response)
       if(response.status === 200) {
